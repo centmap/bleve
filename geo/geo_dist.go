@@ -96,3 +96,8 @@ func Haversin(lon1, lat1, lon2, lat2 float64) float64 {
 
 	return diameter * asin(math.Min(1, math.Sqrt(h)))
 }
+
+func WebMercatorDist(lon1, lat1, lon2, lat2 float64) float64 {
+	dist := math.Sqrt(math.Pow(lon1-lon2, 2) + math.Pow(lat1-lat2, 2))
+	return dist
+}

@@ -667,7 +667,8 @@ func (s *SortGeoDistance) Value(i *DocumentMatch) string {
 	docLon := geo.MortonUnhashLon(uint64(i64))
 	docLat := geo.MortonUnhashLat(uint64(i64))
 
-	dist := geo.Haversin(s.Lon, s.Lat, docLon, docLat)
+	//dist := geo.Haversin(s.Lon, s.Lat, docLon, docLat)
+	dist := geo.WebMercatorDist(s.Lon, s.Lat, docLon, docLat)
 	// dist is returned in km, so convert to m
 	dist *= 1000
 	if s.unitMult != 0 {
