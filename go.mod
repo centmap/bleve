@@ -27,3 +27,5 @@ require (
 	go.etcd.io/bbolt v1.3.5
 	golang.org/x/text v0.3.7
 )
+
+replace github.com/blevesearch/bleve/v2 v2.3.0 => github.com/centmap/bleve/v2 v2.3.0
